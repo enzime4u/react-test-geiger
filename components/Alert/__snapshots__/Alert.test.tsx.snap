@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should match the snapshot and render 1`] = `
+<div>
+  <div
+    style="display: none;"
+  >
+    <div
+      class="sc-4fde7620-0 ZYYvZ"
+    >
+      <h1 />
+    </div>
+  </div>
+</div>
+`;

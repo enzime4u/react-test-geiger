@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should match the snapshot and render 1`] = `
+<div>
+  <div>
+    <form
+      class="sc-4142dcf-0 bukgte"
+    >
+      <label
+        class="sc-c25ec0ba-0 AOPnj"
+        for=":r0:"
+      >
+        Email
+      </label>
+      <input
+        class="sc-c25ec0ba-1 kunqTV error"
+        id=":r0:"
+        label="Email"
+        name="email"
+        placeholder="Add your email"
+        type="email"
+        value=""
+      />
+      <label
+        class="sc-c25ec0ba-0 AOPnj"
+        for=":r1:"
+      >
+        Please select a category
+      </label>
+       
+      <select
+        class="sc-c25ec0ba-2 iQdcvS"
+        id=":r1:"
+        label="Please select a category"
+        name="select"
+        options="[object Object],[object Object],[object Object],[object Object],[object Object]"
+        placeholder="Choose"
+        type="select"
+      >
+        <option
+          value="-"
+        >
+          Select an option
+        </option>
+        <option
+          value="Shoes"
+        >
+          Shoes
+        </option>
+        <option
+          value="Heels"
+        >
+          Heels
+        </option>
+        <option
+          value="Sandals"
+        >
+          Sandals
+        </option>
+        <option
+          value="Handbags"
+        >
+          Handbags
+        </option>
+      </select>
+      <div
+        class="sc-c25ec0ba-4 jmIHMh"
+      >
+        <input
+          class="sc-c25ec0ba-3 ctlbxZ"
+          id=":r2:"
+          label="Tick if you agree with terms and conditions"
+          name="checkbox"
+          role="checkbox"
+          type="checkbox"
+        />
+        <label
+          class="sc-c25ec0ba-0 AOPnj"
+          for=":r2:"
+        >
+          Tick if you agree with terms and conditions
+        </label>
+      </div>
+      <button
+        class="sc-4142dcf-1 pDeJh"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+`;
