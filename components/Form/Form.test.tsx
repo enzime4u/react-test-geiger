@@ -5,6 +5,28 @@ import store from "../../redux/store";
 import { ThemeProvider } from "styled-components";
 import { theme } from "@/configs";
 import Form from ".";
+import { MockedProvider } from "@apollo/client/testing";
+import { GET_FILMS } from "@/queries";
+
+const mocks = [
+  {
+    request: {
+      query: GET_FILMS,
+    },
+    result: {
+      data: {
+        allFilms: {
+          films: [
+            { title: "Title One" },
+            { title: "Title Two" },
+            { title: "Title Three" },
+            { title: "Title Four" },
+          ],
+        },
+      },
+    },
+  },
+];
 
 const withProviders = (children: React.JSX.Element) => (
   <ThemeProvider theme={theme}>
@@ -13,20 +35,27 @@ const withProviders = (children: React.JSX.Element) => (
 );
 
 it("it should match the snapshot and render", async () => {
-  const { container } = render(withProviders(<Form />));
+  const { container } = render(
+    withProviders(
+      <MockedProvider mocks={mocks} addTypename={false}>
+        <Form />
+      </MockedProvider>
+    )
+  );
 
   expect(container).toMatchSnapshot();
   expect(container).toBeInTheDocument();
 
   const emailInput = await screen.findByPlaceholderText("Add your email");
-  const selectInput = await screen.findByPlaceholderText("Choose");
+  const selectInput = await screen.findByLabelText("Please select a category");
+
   const checkboxInput = screen.getByRole("checkbox");
 
   fireEvent.change(emailInput, { target: { value: "test@test.com" } });
-  fireEvent.change(selectInput, { target: { value: "Shoes" } });
+  fireEvent.change(selectInput, { target: { value: "Title One" } });
   fireEvent.click(checkboxInput!);
 
   expect(emailInput).toHaveValue("test@test.com");
-  expect(selectInput).toHaveValue("Shoes");
+  expect(selectInput).toHaveValue("Title One");
   expect(checkboxInput).toBeChecked();
 });

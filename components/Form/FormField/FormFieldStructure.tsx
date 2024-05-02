@@ -14,7 +14,7 @@ import { RootState } from "@/redux/store";
 
 const FormFieldStructure = (props: FormFieldProps) => {
   const { email, category, agreedToTerms, isValid, errorFields } = useSelector(
-    (state: RootState) => state.newsLetter,
+    (state: RootState) => state.newsLetter
   );
 
   const RenderComponent = (type: FormFieldProps["type"]) => {
@@ -28,6 +28,7 @@ const FormFieldStructure = (props: FormFieldProps) => {
             {...props}
             value={email}
             id={id}
+            tabIndex={0}
             className={(!isValid && errorFields.emailErr && "error") || ""}
             onChange={(e) => dispatch(updateEmail(e.target.value))}
           />
@@ -42,6 +43,7 @@ const FormFieldStructure = (props: FormFieldProps) => {
             id={id}
             checked={agreedToTerms}
             role="checkbox"
+            tabIndex={0}
             onChange={() => dispatch(updateTerms(!agreedToTerms))}
           />
           <FormFieldLabel
@@ -60,6 +62,7 @@ const FormFieldStructure = (props: FormFieldProps) => {
         <FormFieldSelect
           {...props}
           id={id}
+          tabIndex={0}
           onChange={(e) => dispatch(updateCategory(e.target.value))}
         >
           {props.options?.map((option) => (

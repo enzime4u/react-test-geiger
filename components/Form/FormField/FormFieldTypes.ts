@@ -16,4 +16,5 @@ export interface FormFieldProps {
   placeholder?: string;
   options?: Option[];
   checked?: boolean;
+  htmlFor: string;
 }

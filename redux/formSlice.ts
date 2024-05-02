@@ -30,7 +30,7 @@ const formSlice = createSlice({
     updateTerms: (state, action) => {
       state.agreedToTerms = action.payload;
     },
-    submitForm: (state, action) => {
+    submitForm: (state) => {
       state.isValid = EMAIL_REGEX.test(state.email) && state.agreedToTerms;
     },
     setErrorFields: (state, action) => {
